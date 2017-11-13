@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    buildToolsVersion '26.0.2'
     defaultConfig {
         applicationId "com.sdl.hellosdlandroid"
         minSdkVersion 9
@@ -17,35 +17,43 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    productFlavors{
-        mbt_high {
-            buildConfigField 'String', 'TRANSPORT', '"MBT"'
-            buildConfigField 'String', 'SECURITY', '"HIGH"'
-        }
-        mbt_med {
-            buildConfigField 'String', 'TRANSPORT', '"MBT"'
-            buildConfigField 'String', 'SECURITY', '"MED"'
-        }
-        mbt_low {
-            buildConfigField 'String', 'TRANSPORT', '"MBT"'
-            buildConfigField 'String', 'SECURITY', '"LOW"'
-        }
-        mbt_off {
-            buildConfigField 'String', 'TRANSPORT', '"MBT"'
-            buildConfigField 'String', 'SECURITY', '"OFF"'
-        }
-        lbt {
-            buildConfigField 'String', 'TRANSPORT', '"LBT"'
-            buildConfigField 'String', 'SECURITY', '"OFF"'
-        }
-        tcp {
-            buildConfigField 'String', 'TRANSPORT', '"TCP"'
-            buildConfigField 'String', 'SECURITY', '"OFF"'
-        }
-        usb {
-            buildConfigField 'String', 'TRANSPORT', '"USB"'
-            buildConfigField 'String', 'SECURITY', '"OFF"'
-        }
+flavorDimensions "dim"
+productFlavors{
+    mbt_high {
+        buildConfigField 'String', 'TRANSPORT', '"MBT"'
+        buildConfigField 'String', 'SECURITY', '"HIGH"'
+        dimension "dim"
+    }
+    mbt_med {
+        buildConfigField 'String', 'TRANSPORT', '"MBT"'
+        buildConfigField 'String', 'SECURITY', '"MED"'
+        dimension "dim"
+    }
+    mbt_low {
+        buildConfigField 'String', 'TRANSPORT', '"MBT"'
+        buildConfigField 'String', 'SECURITY', '"LOW"'
+        dimension "dim"
+    }
+    mbt_off {
+        buildConfigField 'String', 'TRANSPORT', '"MBT"'
+        buildConfigField 'String', 'SECURITY', '"OFF"'
+        dimension "dim"
+    }
+    lbt {
+        buildConfigField 'String', 'TRANSPORT', '"LBT"'
+        buildConfigField 'String', 'SECURITY', '"OFF"'
+        dimension "dim"
+    }
+    tcp {
+        buildConfigField 'String', 'TRANSPORT', '"TCP"'
+        buildConfigField 'String', 'SECURITY', '"OFF"'
+        dimension "dim"
+    }
+    usb {
+        buildConfigField 'String', 'TRANSPORT', '"USB"'
+        buildConfigField 'String', 'SECURITY', '"OFF"'
+        dimension "dim"
+    }
     }
 }
 
